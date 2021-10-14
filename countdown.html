@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="divport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes slide_horiz_pos {
+            0% {
+                transform: translateX(5%);
+            }
+
+            100% {
+                transform: translateX(7%);
+            }
+        }
+
+        @keyframes slide_horiz_neg {
+            0% {
+                transform: translateX(-7%);
+            }
+
+            100% {
+                transform: translateX(-5%);
+            }
+        }
+
+        @keyframes slide_vert_neg {
+            0% {
+                transform: translateY(-7%);
+            }
+
+            100% {
+                transform: translateY(-5%);
+            }
+        }
+
+        @keyframes slide_vert_pos {
+            0% {
+                transform: translateY(5%);
+            }
+
+            100% {
+                transform: translateY(7%);
+            }
+        }
+
+        .score-bg-wrap {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            animation: spin 5s linear infinite;
+            border-radius: 50%;
+            z-index: 1;
+            color: #00c7a9;
+            background-color: #00c7a9;
+        }
+
+        .score-annulus {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            mix-blend-mode: lighten;
+            opacity: .5;
+            z-index: 1;
+        }
+
+        .score-annulus:nth-child(1) {
+            animation: slide_horiz_neg 4s linear alternate infinite;
+        }
+
+        .score-annulus:nth-child(1)::after {
+            background: rgba(17, 212, 182, 1);
+        }
+
+        .score-annulus:nth-child(2) {
+            animation: slide_vert_neg 3s linear alternate infinite;
+        }
+
+        .score-annulus:nth-child(2)::after {
+            background: rgba(17, 212, 182, .8);
+        }
+
+        .score-annulus:nth-child(3) {
+            animation: slide_horiz_pos 4.5s linear alternate infinite;
+        }
+
+        .score-annulus:nth-child(3)::after {
+            background: rgba(17, 212, 182, .6);
+        }
+
+        .score-annulus:nth-child(4) {
+            animation: slide_vert_pos 3.5s linear alternate infinite;
+        }
+
+        .score-annulus:nth-child(4)::after {
+            background: rgba(17, 212, 182, .4);
+        }
+
+        .score-annulus::after {
+            content: "";
+            color: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 100%;
+        }
+
+        .charging-body {
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            font-size: 30px;
+            background: #ffffff;
+            border-radius: 50%;
+            z-index: 10;
+        }
+
+        .status-container {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            display: flex;
+            flex-direction: column;
+            border-radius: 50%;
+            color: #00c7a9;
+            align-items: center;
+            box-shadow: 0px 16px 34px 0px rgba(0, 212, 202, 0.15);
+        }
+        .tip{
+            font-size: 20px;
+            color: gray;
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="status-container">
+        <div class="score-bg-wrap">
+            <div class="score-annulus"></div>
+            <div class="score-annulus"></div>
+            <div class="score-annulus"></div>
+            <div class="score-annulus"></div>
+        </div>
+        <div class="charging-body">
+            <text class="middle">00:30:00</text>
+            <text class="tip">离场倒计时</text>
+        </div>
+    </div>
+
+</body>
+
+</html>
