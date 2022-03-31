@@ -14,20 +14,17 @@
         let arr = [1, 2, 3, 4, [5, 6, 7, [8, 9]], [10, [11, [12, 13], [14, 15]]]]
         //first
         let arrFlat = arr.flat(Infinity)
-        // second
+        //second
         function recursion(arr) {
             let recursionArr = []
-            function inner(arr) {
-                for (let i = 0; i < arr.length; i++) {
-                    if (Array.isArray(arr[i])) {
-                        inner(arr[i])
-                    }
-                    else {
-                        recursionArr.push(arr[i])
-                    }
+            for (let i of arr) {
+                if (Array.isArray(i)) {
+                    recursionArr = [...recursionArr, ...recursion(i)]
+                }
+                else {
+                    recursionArr.push(i)
                 }
             }
-            inner(arr)
             return recursionArr
         }
         //third
