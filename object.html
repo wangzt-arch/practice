@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        let aaa = { aaa: "aaa" }
+        let bbb = aaa
+
+        let ccc = Object.assign({}, aaa)
+        let ddd = { ...aaa }
+
+        console.log("a1", aaa);
+        console.log("b1", bbb);
+        console.log("c1", ccc);
+        console.log("d1", ddd);
+
+        ddd.aaa = "bbb"
+
+        console.log("a1", aaa);
+        console.log("b2", bbb);
+        console.log("c2", ccc);
+        console.log("d2", ddd);
+
+        </script>
+</head>
+
+<body>
+    <!-- <div class="aaa">aaa</div> -->
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        let arr = [1, 2, 3, 4, [5, 6, 7, [8, 9]], [10, [11, [12, 13], [14, 15]]]]
+        //first
+        let arrFlat = arr.flat(Infinity)
+        // second
+        function recursion(arr) {
+            let recursionArr = []
+            function inner(arr) {
+                for (let i = 0; i < arr.length; i++) {
+                    if (Array.isArray(arr[i])) {
+                        inner(arr[i])
+                    }
+                    else {
+                        recursionArr.push(arr[i])
+                    }
+                }
+            }
+            inner(arr)
+            return recursionArr
+        }
+        //third
+
+        console.log(arr);
+        console.log(arrFlat);
+        console.log(recursion(arr))
+    </script>
+
+</body>
+
+</html>

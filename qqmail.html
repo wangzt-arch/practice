@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.staticfile.org/jquery/1.11.1/jquery.min.js"></script>
+    <script src="./language.js"></script>
+    <script>
+        function changea() {
+            translate()
+            console.log("fanyi");
+        }
+
+        let aaa = { aaa: "aaa" }
+        let bbb = aaa
+        bbb.bbb = "bbb"
+        console.log("aaa",aaa);
+    </script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .qq-mail {
+            width: 100%;
+            height: 100%;
+        }
+
+        .header {
+            display: flex;
+            width: 100%;
+            align-items: center;
+            justify-content: space-between;
+            height: 62px;
+            border-bottom: 1px solid #d6dfea;
+            background: #eff4fa;
+        }
+
+        .header-left {
+            padding-left: 10px;
+        }
+
+        .logo {
+            width: 182px;
+            height: 35px
+        }
+
+        .header-right {
+            display: flex;
+            padding-right: 10px;
+        }
+
+        .header-right a {
+            padding: 0 5px;
+            color: #1d5494;
+            text-decoration: none;
+        }
+
+        .content {
+            display: flex;
+            margin-top: 30px;
+            justify-content: space-around;
+        }
+
+        .login-picture {
+            height: 400px
+        }
+
+        .login-card {
+
+            border: 1px solid #a0b1c4;
+            border-radius: 5px;
+        }
+
+        .login-card_tab {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            width: 330px;
+            height: 50px;
+            border-bottom: 1px solid #a0b1c4;
+        }
+
+        .card-input-box {
+            height: 130px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        .input {
+            width: 258px;
+            height: 18px;
+            padding: 11px 0 11px 10px;
+            line-height: 18px;
+            color: #333;
+            border: none;
+            font-family: Verdana, Tahoma, Arial;
+            font-size: 16px;
+            border: 1px solid #dbe4ee;
+        }
+
+        .auto-login {
+            padding-left: 25px;
+        }
+
+        .login-btn-box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .login-btn {
+            width: 270px;
+            height: 35px;
+            line-height: 35px;
+            border: none;
+            font-size: 18px;
+            font-weight: 700;
+            color: #fff;
+            cursor: pointer;
+            margin: 10px 0;
+            background-color: rgb(90, 152, 222)
+        }
+
+        .login-card_bottom {
+            margin-top: 20px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 25px;
+        }
+
+        .footer {
+            display: flex;
+            width: 100%;
+            height: 36px;
+            align-items: center;
+            justify-content: center;
+            position: fixed;
+            bottom: 0;
+            color: #b6b6b6;
+            background-color: #eff4fa;
+            border-top: 1px solid #d6dfea;
+        }
+
+        .footer a {
+            color: #1d5494;
+            text-decoration: none;
+            padding: 0 5px;
+            border-right: 1px solid #b6b6b6;
+            ;
+        }
+
+        .footer span {
+            margin-left: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="change" onclick="changea()">翻译一下</div>
+    <div class="qq-mail">
+        <div class="header">
+            <div class="header-left">
+                <img class="logo"
+                    src="https://rescdn.qqmail.com/zh_CN/htmledition/images/logo/qqmail/qqmail_logo_default_70h206ff1.png"
+                    alt="">
+            </div>
+            <div class="header-right">
+                <a href="">基本版</a>
+                <a href="">English</a>
+                <a href="">手机版</a>
+                <a href="">企业版</a>
+            </div>
+        </div>
+        <div class="content">
+            <div class="content-left">
+                <img class="login-picture" src="https://rescdn.qqmail.com/zh_CN/htmledition/images/tg-mj1e9c5d.jpg"
+                    alt="">
+            </div>
+            <div class="content-right">
+                <div class="login-card">
+                    <div class="login-card_tab">
+                        <div>微信登录</div>
+                        <div>QQ登录</div>
+                    </div>
+                    <div class="card-input-box">
+                        <input class="input" type="text" placeholder="支持QQ号/邮箱/手机号登录">
+                        <input class="input" type="text" placeholder="QQ密码">
+                    </div>
+                    <div class="auto-login">
+                        <input type="checkbox" name="aaa" /> <label>下次自动登录</label>
+                    </div>
+                    <div class=login-btn-box>
+                        <button class='login-btn'>登录</button>
+                    </div>
+                    <div class=login-btn-box>
+                        扫码快捷登录
+                    </div>
+                    <div class="login-card_bottom">
+                        <div>忘了密码？</div>
+                        <div>注册新账号</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <a href="">关于腾讯</a>
+            <a href="">服务条款</a>
+            <a href="">隐私政策</a>
+            <a href="">客服中心</a>
+            <a href="">联系我们</a>
+            <a href="">帮助中心</a>
+            <span>©1998 - 2021 Tencent Inc. All Rights Reserved.</span>
+        </div>
+    </div>
+</body>
+
+</html>
